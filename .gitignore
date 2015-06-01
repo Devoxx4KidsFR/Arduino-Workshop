@@ -26,3 +26,8 @@
 *.exe
 *.out
 *.app
+
+.vagrant
+.DS_Store
+
+
