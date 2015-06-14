@@ -1,0 +1,40 @@
+#N canvas 630 69 564 507 10;
+#X text 268 245 output left and right channels;
+#X text 419 -84 overall gain;
+#X obj 95 62 osc~ 440;
+#X text 155 62 "osc~ 440";
+#X obj 393 -153 slider 127 0 15;
+#X text 415 -100 "slider";
+#X obj 195 181 *~;
+#X text 222 180 "*~";
+#X obj 184 245 dac~;
+#X text 218 245 "dac~";
+#X text 433 88 "/ 127";
+#X obj 393 89 / 127;
+#X obj 419 141 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X text 477 140 "nbx";
+#X obj 13 -88 *~ 20;
+#X obj 13 -38 +~ 440;
+#X obj 46 -58 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X text 103 -59 center frequency;
+#X obj 40 -109 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 46 -188 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X text 103 -174 freq mod rate;
+#X text 97 -109 freq mod amp;
+#X obj 13 -140 osc~ 5;
+#X connect 2 0 6 0;
+#X connect 4 0 11 0;
+#X connect 6 0 8 0;
+#X connect 6 0 8 1;
+#X connect 11 0 6 1;
+#X connect 11 0 12 0;
+#X connect 14 0 15 0;
+#X connect 15 0 2 0;
+#X connect 16 0 15 1;
+#X connect 18 0 14 1;
+#X connect 19 0 22 0;
+#X connect 22 0 14 0;

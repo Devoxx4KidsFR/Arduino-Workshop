@@ -1,0 +1,22 @@
+#N canvas 550 68 614 624 10;
+#X obj 197 28 osc~ 440;
+#X obj 187 162 dac~;
+#X obj 197 -6 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 89 114 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X text 89 130 sortie du controle de hauteur;
+#X text 155 183 Digital Audio Converter Envoi le son sur les haut-parleurs
+;
+#X text 108 205 comment;
+#X obj 89 78 unsig~ 150;
+#X text 213 78 modifie la fréquence;
+#X text 197 -28 parametre: frequence de la sinusoide;
+#X text 60 -142 comment;
+#X text 42 -188 comment;
+#X text 256 29 oscillateur;
+#X connect 0 0 7 0;
+#X connect 0 0 1 0;
+#X connect 0 0 1 1;
+#X connect 2 0 0 0;
+#X connect 7 0 3 0;

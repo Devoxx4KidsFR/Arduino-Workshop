@@ -1,0 +1,50 @@
+#N canvas 550 68 614 624 10;
+#X obj 35 29 osc~ 440;
+#X obj 327 -154 slider 127 0 15;
+#X text 349 -106 "slider";
+#X obj 159 199 *~;
+#X obj 142 285 dac~;
+#X obj 327 63 / 127;
+#X obj 328 126 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 312 290 vu 15 120 empty empty -1 -8 0 10 -66577 -1 1 0;
+#X obj 311 250 pvu~;
+#X obj 35 -8 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 6 138 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X text 309 227 Affichage du volume;
+#X text 337 107 sortie du controle de volume;
+#X text 358 -94 Gain;
+#X obj 359 16 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X text 365 -3 valeur du slider;
+#X text 367 63 "normalise entre 0 et 1";
+#X obj 42 278 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X text -82 154 sortie du controle de hauteur;
+#X text -61 308 Digital Audio Converter Envoi le son sur les haut-parleurs
+;
+#X obj 6 102 unsig~ 150;
+#X obj 42 244 unsig~ 150;
+#X text 192 197 modifie l'amplitude;
+#X text 104 99 modifie la fréquence;
+#X text 35 -29 parametre: frequence de la sinusoide;
+#X text 96 28 oscillateur principal;
+#X text 60 -143;
+#X text 43 -188;
+#X text 63 329;
+#X connect 0 0 3 0;
+#X connect 0 0 20 0;
+#X connect 1 0 5 0;
+#X connect 1 0 14 0;
+#X connect 3 0 4 0;
+#X connect 3 0 4 1;
+#X connect 3 0 8 0;
+#X connect 3 0 21 0;
+#X connect 5 0 3 1;
+#X connect 5 0 6 0;
+#X connect 8 0 7 0;
+#X connect 9 0 0 0;
+#X connect 20 0 10 0;
+#X connect 21 0 17 0;
