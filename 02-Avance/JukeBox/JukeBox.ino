@@ -6,7 +6,7 @@
 int PIN_BUZZER = 8;
 
 int currentTune = 0;
-const int NB_TUNES = 9;
+const int NB_TUNES = 7;
 char* tunes[NB_TUNES];              
 char* playbooks[NB_TUNES];   
 
@@ -49,14 +49,14 @@ void setupTunes() {
  // tunes[6] = "inconnu1";
  // playbooks[6]= "1000 334 1 334 1 0 1 334 1 0 1 261 1 334 1 0 1 392 2 0 4 196 2";
  
-  tunes[6] = "inconnu2";
-  playbooks[6]= "480 165 2 165 2 165 3 554 1 587 1 554 2 370 1 554 1 523 2 349 1 523 1 494 3 165 2 165 2 165 2";
+  //tunes[6] = "inconnu2";
+  //playbooks[6]= "480 165 2 165 2 165 3 554 1 587 1 554 2 370 1 554 1 523 2 349 1 523 1 494 3 165 2 165 2 165 2";
 
-  tunes[7] = "inconnu3";
-  playbooks[7]= "800 523 2 698 2 880 2 1046 1 1 3 880 2 1046 4";
+  //tunes[7] = "inconnu3";
+  //playbooks[7]= "800 523 2 698 2 880 2 1046 1 1 3 880 2 1046 4";
 
-  tunes[8] = "super mario mushroom power up";
-  playbooks[8]= "1750 523 1 392 1 523 1 659 1 784 1 1047 1 784 1 415 1 523 1 622 1 831 1 622 1 831 1 1046 1 1244 1 "
+  tunes[6] = "super mario mushroom power up";
+  playbooks[6]= "1750 523 1 392 1 523 1 659 1 784 1 1047 1 784 1 415 1 523 1 622 1 831 1 622 1 831 1 1046 1 1244 1 "
     "1661 1 1244 1 466 1 587 1 698 1 932 1 1195 1 1397 1 1865 1 1397 1";
   
 }
