@@ -1,4 +1,4 @@
-#N canvas 445 52 682 692 10;
+#N canvas 446 52 682 692 10;
 #X obj 88 94 osc~ 440;
 #X obj 327 -154 slider 127 0 15;
 #X text 349 -106 "slider";
