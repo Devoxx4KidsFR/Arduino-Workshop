@@ -1,0 +1,14 @@
+even seulement
+inverser la pile
+remettre dans le bac du bas, haut à droite et imprimé vers le haut
+odd seulement 
+
+ou 
+
+
+even seulement
+remettre dans le bac du bas, haut à droite et imprimé vers le haut
+odd seulement + reverse order
+
+collage pour regrouper les feuilles par booklet
+
