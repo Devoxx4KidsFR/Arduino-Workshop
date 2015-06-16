@@ -14,7 +14,6 @@ char delimiters[] = " ";
 
 void setup() {
   Serial.begin(9600);
-
   setupTunes();
 }
 
@@ -46,49 +45,52 @@ void setupTunes() {
   tunes[5] = "arpegio";
   playbooks[5]= "480 220 1 277 1 330 1 440 1 185 1 220 1 277 1 370 1 294 1 370 1 440 1 587 1 330 1 415 1 494 1 659 1";  
 
- // tunes[6] = "inconnu1";
- // playbooks[6]= "1000 334 1 334 1 0 1 334 1 0 1 261 1 334 1 0 1 392 2 0 4 196 2";
- 
-  //tunes[6] = "inconnu2";
-  //playbooks[6]= "480 165 2 165 2 165 3 554 1 587 1 554 2 370 1 554 1 523 2 349 1 523 1 494 3 165 2 165 2 165 2";
-
-  //tunes[7] = "inconnu3";
-  //playbooks[7]= "800 523 2 698 2 880 2 1046 1 1 3 880 2 1046 4";
-
   tunes[6] = "super mario mushroom power up";
   playbooks[6]= "1750 523 1 392 1 523 1 659 1 784 1 1047 1 784 1 415 1 523 1 622 1 831 1 622 1 831 1 1046 1 1244 1 "
     "1661 1 1244 1 466 1 587 1 698 1 932 1 1195 1 1397 1 1865 1 1397 1";
-  
 }
 
 void playTune(int position) {
+   Serial.print("Debut du morceau");
    Serial.println(tunes[position]);
    
    char* playbook = strdup(playbooks[position]);
-   //char* playbook = playbooks[position];
-   //Serial.println(playbook);
    
-   char *element;
-   //char *rest;
+   char* element;
    element = strtok(playbook, delimiters);
-   int tempo = atoi(element);
-   float bps = tempo / 60;   
-   Serial.println(tempo);
+   float beat = readBeat(element);
    
    while ( (element = strtok(NULL, delimiters)) != NULL ) {
-      int pitch = atoi(element);
-      Serial.println(pitch);
- 
+      int pitch = readPitch(element);
       element = strtok(NULL, delimiters);
-      int len = atoi(element);
-      Serial.println(len);
-      double duration = len * 1000 / bps;
-      //Serial.println(duration);
-      
+      int duration = readDuration(element, beat);
       playNote(pitch, duration);    
    }
    Serial.println("Morceau termine");
    free(playbook);
+}
+
+float readBeat(char* element) {
+    int tempo = atoi(element);
+    Serial.print("Beat:");
+    Serial.println(tempo);
+    float beat = tempo / 60;   
+    return beat;
+}
+
+int readPitch(char* element) {
+    int pitch = atoi(element);
+    Serial.print("Pitch:");
+    Serial.println(pitch);
+    return pitch;  
+} 
+
+int readDuration(char* element, float beat) {
+    int len = atoi(element);
+    Serial.print("Duration:");
+    Serial.println(len);
+    double duration = len * 1000 / beat;
+    return duration;
 }
 
 void playNote(int pitch, double duration) {
