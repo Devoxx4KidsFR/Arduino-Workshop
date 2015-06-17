@@ -1,0 +1,38 @@
+#N canvas 491 53 765 321 10;
+#X obj 117 178 dac~;
+#X obj 25 178 unsig~ 150;
+#X floatatom 25 214 5 0 0 0 - - -;
+#X text 68 214 affiche la valeur toutes les 150 ms;
+#X obj 132 -29 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 128 13 mtof~;
+#X text 170 12 [mtof] converti les notes MIDI (de 0 à 127) en fréquence.
+;
+#X obj 239 121 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 262 117 génère le graphe;
+#X obj 239 145 metro 150;
+#N canvas 226 207 450 278 (subpatch) 0;
+#X array square 300 float 0;
+#X coords 0 1 299 -1 200 140 1 0 0;
+#X restore 348 150 graph;
+#X floatatom 64 13 5 0 0 0 - - -;
+#X obj 128 49 phasor~;
+#X text 181 48 [phasor~] gènère des valeurs selon une forme en dent
+de scie;
+#X obj 226 176 tabwrite~ square;
+#X obj 128 89 expr~ \$1 > 0.5;
+#X text 225 89 rend la valeur 0 en dessous de 0 \, 5 et 1 au dessus
+;
+#X text 269 -28 Le slider produit des valeurs en 0 et 127;
+#X connect 1 0 2 0;
+#X connect 4 0 5 0;
+#X connect 4 0 11 0;
+#X connect 5 0 12 0;
+#X connect 7 0 9 0;
+#X connect 9 0 14 0;
+#X connect 12 0 15 0;
+#X connect 15 0 1 0;
+#X connect 15 0 14 0;
+#X connect 15 0 0 0;
+#X connect 15 0 0 1;

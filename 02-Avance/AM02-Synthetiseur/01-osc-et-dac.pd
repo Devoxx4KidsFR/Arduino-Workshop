@@ -1,0 +1,7 @@
+#N canvas 686 138 569 289 10;
+#X obj 128 67 osc~ 440;
+#X obj 119 133 dac~;
+#X text 203 67 génère des valeurs entre -1 et 1;
+#X text 155 133 convertit la valeur en son sur les haut-parleurs;
+#X connect 0 0 1 0;
+#X connect 0 0 1 1;
