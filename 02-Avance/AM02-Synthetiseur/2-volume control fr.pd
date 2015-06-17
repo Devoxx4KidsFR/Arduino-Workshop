@@ -1,39 +1,39 @@
 #N canvas 550 68 614 624 10;
-#X obj 35 29 osc~ 440;
-#X obj 327 -154 slider 127 0 15;
+#X obj 35 44 osc~ 440;
+#X obj 327 -142 slider 127 0 15;
 #X text 349 -106 "slider";
 #X obj 159 199 *~;
-#X obj 142 285 dac~;
+#X obj 142 278 dac~;
 #X obj 327 63 / 127;
-#X obj 328 126 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
-#X obj 312 290 vu 15 120 empty empty -1 -8 0 10 -66577 -1 1 0;
-#X obj 311 250 pvu~;
-#X obj 35 -8 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
-#X obj 6 138 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
-#X text 309 227 Affichage du volume;
-#X text 337 107 sortie du controle de volume;
-#X text 358 -94 Gain;
-#X obj 359 16 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
-#X text 365 -3 valeur du slider;
-#X text 367 63 "normalise entre 0 et 1";
-#X obj 42 278 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
-#X text -82 154 sortie du controle de hauteur;
+#X obj 327 138 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0.860472 256;
+#X obj 310 282 vu 15 120 empty empty -1 -8 0 10 -66577 -1 1 0;
+#X obj 311 244 pvu~;
+#X obj 35 8 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10 -262144
+-1 -1 0 256;
+#X obj 6 155 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0.742056 256;
+#X text 309 243 Affichage du volume;
+#X text 327 101 sortie du controle de volume;
+#X text 358 -106 Gain;
+#X obj 365 28 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 109.28 256;
+#X text 365 -9 valeur du slider;
+#X text 365 63 "normalise entre 0 et 1";
+#X obj 42 283 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0.638519 256;
+#X text -72 177 sortie du controle de hauteur;
 #X text -61 308 Digital Audio Converter Envoi le son sur les haut-parleurs
 ;
 #X obj 6 102 unsig~ 150;
 #X obj 42 244 unsig~ 150;
-#X text 192 197 modifie l'amplitude;
-#X text 104 99 modifie la fréquence;
+#X text 192 198 modifie l'amplitude;
+#X text 104 101 modifie la fréquence;
 #X text 35 -29 parametre: frequence de la sinusoide;
 #X text 96 28 oscillateur principal;
-#X text 60 -143;
-#X text 43 -188;
-#X text 63 329;
+#X text 43 -152 comment;
+#X text 43 -188 comment;
+#X text 63 329 comment;
 #X connect 0 0 3 0;
 #X connect 0 0 20 0;
 #X connect 1 0 5 0;
