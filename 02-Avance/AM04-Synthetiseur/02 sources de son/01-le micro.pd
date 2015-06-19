@@ -9,8 +9,6 @@ principale de Pure Data;
 0;
 #X text 13 -123 Chante dans le micro \, claque des doigts \, fait du
 bruit ...;
-#X text 11 9;
-#X text 10 33;
 #X text 11 -15 Le Audio Digital Converter convertit les sons du micro
 en nombres entre -1 et 1;
 #X obj 81 28 adc~;
@@ -21,16 +19,16 @@ en nombres entre -1 et 1;
 #X coords 0 1 299 -1 300 70 1 0 0;
 #X restore 254 95 graph;
 #X obj 143 120 metro 150;
-#X obj 143 91 tgl 15 1 empty empty empty 17 7 0 10 -261234 -1 -1 0
+#X obj 143 91 tgl 15 1 empty empty empty 17 7 0 10 -261234 -1 -1 1
 1;
 #X obj 143 149 tabwrite~ micro;
 #X obj 8 105 cnv 15 100 70 empty empty empty 20 12 0 14 -237566 -66577
 0;
 #X obj 22 117 unsig~ 150;
 #X floatatom 23 146 5 0 0 0 - - -;
-#X connect 9 0 14 0;
-#X connect 9 0 16 0;
-#X connect 12 0 14 0;
-#X connect 13 0 12 0;
-#X connect 16 0 17 0;
+#X connect 7 0 12 0;
+#X connect 7 0 14 0;
+#X connect 10 0 12 0;
+#X connect 11 0 10 0;
+#X connect 14 0 15 0;
 #X coords 0 392 1 391 85 60 0;

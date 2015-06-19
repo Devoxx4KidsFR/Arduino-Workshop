@@ -26,7 +26,7 @@ de Pure Data;
 ;
 #X obj 70 328 phasor~;
 #X msg 39 230 220;
-#X msg 73 232 440;
+#X msg 72 231 440;
 #X text 73 210 La;
 #X text 107 209 La;
 #X msg 112 230 880;
