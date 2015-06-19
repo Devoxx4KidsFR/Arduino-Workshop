@@ -1,0 +1,66 @@
+#N canvas 274 47 1013 752 10;
+#X obj -7 3 cnv 15 500 130 empty empty empty 20 12 0 16 -261015 -99865
+0;
+#X text 9 108 Pour arrêter le son \, désactive DSP;
+#X text 9 12 Pour jouer le patch \, active DSP dans la fenêtre principale
+de Pure Data;
+#X text 8 88 Active le graphe;
+#X obj -8 160 cnv 15 200 100 empty empty empty 20 12 0 14 -261873 -66577
+0;
+#X text 40 209 La;
+#X obj 49 319 cnv 15 530 130 empty empty empty 20 12 0 14 -249849 -66577
+0;
+#X obj 11 503 cnv 15 100 50 empty empty empty 20 12 0 14 -237566 -66577
+0;
+#X obj 50 522 dac~;
+#X obj 130 501 cnv 15 450 100 empty empty empty 20 12 0 14 -261819
+-66577 0;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array square 300 float 0;
+#X coords 0 1 299 -1 300 70 1 0 0;
+#X restore 267 520 graph;
+#X obj 147 546 metro 150;
+#X obj 148 517 tgl 15 1 empty empty empty 17 7 0 10 -261234 -1 -1 1
+1;
+#X text 9 66 Edite le message et change la note si tu le souhaite.
+;
+#X obj 70 328 phasor~;
+#X msg 39 230 220;
+#X msg 73 232 440;
+#X text 73 210 La;
+#X text 107 209 La;
+#X msg 112 230 880;
+#X text 6 165 Les La sur 3 octaves.;
+#X text 6 187 Choisi un des La pour démarrer;
+#X text 212 161 On peut générer d'autres formes d'onde en appliquant
+des fonctions au résultat du phasor.;
+#X text 214 200 La même fréquence est perçue différemment.;
+#X obj 147 574 tabwrite~ square;
+#X obj 71 390 expr~ $v1 > $v2;
+#X obj 161 302 hsl 128 15 0 100 0 1 empty empty empty -2 -8 0 10 -262144
+-1 -1 10300 1;
+#X obj 158 350 / 100;
+#X text 207 411 $v1 et $v2 représentent la valeur de la note reçue
+en entrée gauche et le seuil reçu à droite;
+#X text 207 325 Pour avoir une onde carrée à partir du phasor qui
+génère des nombres entre 0 et 1 \, on va transformer en 0 toutes
+les valeurs au dessous d'un seuil \, et en 1 toutes les autres.;
+#X text 206 374 expr~ évalue l'expression. Si c'est faux \, la valeur
+est 0 \, sinon c'est 1;
+#X text 157 280 Sélectionne un seuil;
+#X text 8 45 Choisi un des La pour démarrer et sélectionne un seuil.
+;
+#X text 208 468 Pour un seuil de 50% \, on obtient une onde carrée.
+Pour les valeurs proches de 100% \, on obtient un pulse.;
+#X connect 11 0 24 0;
+#X connect 12 0 11 0;
+#X connect 14 0 25 0;
+#X connect 15 0 14 0;
+#X connect 16 0 14 0;
+#X connect 19 0 14 0;
+#X connect 25 0 24 0;
+#X connect 25 0 8 0;
+#X connect 25 0 8 1;
+#X connect 26 0 27 0;
+#X connect 27 0 25 1;
+#X coords 0 752 1 751 85 60 0;

@@ -1,0 +1,51 @@
+#N canvas 601 61 613 429 10;
+#X obj 118 199 osc~;
+#X obj -11 -169 cnv 15 500 100 empty empty empty 20 12 0 16 -261015
+-99865 0;
+#X text 5 -127 Sélectionne chaque note l'une après l'autre;
+#X text 6 -105 Pour arrêter le son \, désactive DSP;
+#X text 5 -159 Pour jouer le patch \, active DSP dans la fenêtre principale
+de Pure Data;
+#X obj 63 99 cnv 15 450 60 empty empty empty 20 12 0 14 -249849 -66577
+0;
+#X obj 67 189 cnv 15 420 40 empty empty empty 20 12 0 14 -237566 -66577
+0;
+#X obj -3 -43 cnv 15 400 100 empty empty empty 20 12 0 14 -261873 -66577
+0;
+#X msg 12 22 264;
+#X msg 50 22 297;
+#X msg 86 23 330;
+#X msg 122 24 352;
+#X msg 156 24 396;
+#X msg 191 24 440;
+#X msg 227 24 495;
+#X msg 264 24 528;
+#X text 15 5 Do;
+#X text 55 6 Ré;
+#X text 91 7 Mi;
+#X text 125 8 Fa;
+#X text 157 7 Sol;
+#X text 192 6 La;
+#X text 229 8 Si;
+#X text 269 8 Do;
+#X text 294 31;
+#X text 5 -31 Chaque note est un message qui peut être envoyé sur
+l'entrée. Les lignes sont fines car il y a une seule valeur.;
+#X obj 91 109 osc~;
+#X text 138 100 L'oscillateur converti la fréquence de la note en
+valeur entre -1 et 1 En sortie \, les lignes sont épaisses car c'est
+flux de données.;
+#X obj 82 200 dac~;
+#X text 118 194 Le Digital Audio Converter convertit la valeur enre
+-1 et 1 en son.;
+#X connect 8 0 26 0;
+#X connect 9 0 26 0;
+#X connect 10 0 26 0;
+#X connect 11 0 26 0;
+#X connect 12 0 26 0;
+#X connect 13 0 26 0;
+#X connect 14 0 26 0;
+#X connect 15 0 26 0;
+#X connect 26 0 28 0;
+#X connect 26 0 28 1;
+#X coords 0 429 1 428 85 60 0;

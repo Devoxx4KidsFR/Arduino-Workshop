@@ -1,0 +1,12 @@
+#N canvas 504 22 450 300 10;
+#X obj 147 167 readsf~ 2;
+#X obj 138 238 dac~;
+#X text 85 28 clique ici pour choisir le fichier;
+#X msg 161 122 start;
+#X msg 212 122 stop;
+#X msg 48 86 open drummach.wav;
+#X connect 0 0 1 0;
+#X connect 0 0 1 1;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;
+#X connect 5 0 0 0;

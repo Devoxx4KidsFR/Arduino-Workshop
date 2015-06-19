@@ -1,0 +1,31 @@
+#N canvas 256 22 1013 752 10;
+#X obj -7 3 cnv 15 500 90 empty empty empty 20 12 0 16 -261015 -99865
+0;
+#X text 9 52 Pour arrêter le son \, désactive DSP;
+#X text 9 12 Pour jouer le patch \, active DSP dans la fenêtre principale
+de Pure Data;
+#X obj 45 116 cnv 15 450 50 empty empty empty 20 12 0 14 -249849 -66577
+0;
+#X obj 6 190 cnv 15 100 50 empty empty empty 20 12 0 14 -237566 -66577
+0;
+#X obj 38 210 dac~;
+#X obj 125 188 cnv 15 450 100 empty empty empty 20 12 0 14 -261819
+-66577 0;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array noise 300 float 0;
+#X coords 0 1 299 -1 300 70 1 0 0;
+#X restore 262 207 graph;
+#X obj 142 233 metro 150;
+#X obj 142 203 tgl 15 1 empty empty empty 17 7 0 10 -261234 -1 -1 1
+1;
+#X obj 66 125 noise~;
+#X text 130 119 Le bruit blanc contient toutes les fréquences mélangées.
+ça produit un son sans intérêt. On verra plus tard à quoi il sert.
+;
+#X obj 142 261 tabwrite~ noise;
+#X connect 8 0 12 0;
+#X connect 9 0 8 0;
+#X connect 10 0 5 0;
+#X connect 10 0 5 1;
+#X connect 10 0 12 0;
+#X coords 0 752 1 751 85 60 0;

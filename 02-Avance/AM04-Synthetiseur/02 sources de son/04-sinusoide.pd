@@ -1,0 +1,51 @@
+#N canvas 274 47 1013 752 10;
+#X obj -7 3 cnv 15 500 130 empty empty empty 20 12 0 16 -261015 -99865
+0;
+#X text 9 108 Pour arrêter le son \, désactive DSP;
+#X text 9 12 Pour jouer le patch \, active DSP dans la fenêtre principale
+de Pure Data;
+#X text 8 88 Active le graphe;
+#X obj -8 160 cnv 15 200 100 empty empty empty 20 12 0 14 -261873 -66577
+0;
+#X text 42 212 La;
+#X obj 51 285 cnv 15 450 50 empty empty empty 20 12 0 14 -249849 -66577
+0;
+#X obj 25 364 cnv 15 100 50 empty empty empty 20 12 0 14 -237566 -66577
+0;
+#X obj 64 383 dac~;
+#X obj 144 362 cnv 15 450 100 empty empty empty 20 12 0 14 -261819
+-66577 0;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array sine 300 float 0;
+#X coords 0 1 299 -1 300 70 1 0 0;
+#X restore 281 381 graph;
+#X obj 161 407 metro 150;
+#X obj 161 378 tgl 15 1 empty empty empty 17 7 0 10 -261234 -1 -1 1
+1;
+#X text 9 66 Edite le message et change la note si tu le souhaite.
+;
+#X msg 39 230 220;
+#X msg 73 230 440;
+#X text 74 212 La;
+#X text 113 213 La;
+#X msg 111 231 880;
+#X text 6 165 Les La sur 3 octaves.;
+#X text 6 187 Choisi un des La pour démarrer;
+#X text 212 161 On peut générer d'autres formes d'onde en appliquant
+des fonctions au résultat du phasor.;
+#X text 214 200 La même fréquence est perçue différemment.;
+#X obj 72 294 osc~;
+#X text 8 46 Choisi un des La pour démarrer.;
+#X obj 161 433 tabwrite~ sine;
+#X text 117 286 L'oscillateur est équivalent à un phasor plus une
+fonction cosinus appliquée à son résultat. Il produit une onde sinusoïdale
+qui correspond à une harmonique \, ici le La.;
+#X connect 11 0 25 0;
+#X connect 12 0 11 0;
+#X connect 14 0 23 0;
+#X connect 15 0 23 0;
+#X connect 18 0 23 0;
+#X connect 23 0 8 0;
+#X connect 23 0 8 1;
+#X connect 23 0 25 0;
+#X coords 0 752 1 751 85 60 0;

@@ -1,0 +1,60 @@
+#N canvas 297 27 1013 752 10;
+#X obj -7 3 cnv 15 500 130 empty empty empty 20 12 0 16 -261015 -99865
+0;
+#X text 9 108 Pour arrêter le son \, désactive DSP;
+#X text 9 12 Pour jouer le patch \, active DSP dans la fenêtre principale
+de Pure Data;
+#X text 8 88 Active le graphe;
+#X obj -8 160 cnv 15 200 100 empty empty empty 20 12 0 14 -261873 -66577
+0;
+#X text 40 209 La;
+#X obj 49 319 cnv 15 450 95 empty empty empty 20 12 0 14 -249849 -66577
+0;
+#X obj 9 448 cnv 15 100 50 empty empty empty 20 12 0 14 -237566 -66577
+0;
+#X obj 41 468 dac~;
+#X obj 128 446 cnv 15 450 100 empty empty empty 20 12 0 14 -261819
+-66577 0;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array sawtooth 300 float 0;
+#X coords 0 1 299 -1 300 70 1 0 0;
+#X restore 265 465 graph;
+#X obj 145 491 metro 150;
+#X obj 145 461 tgl 15 1 empty empty empty 17 7 0 10 -261234 -1 -1 1
+1;
+#X text 9 66 Edite le message et change la note si tu le souhaite.
+;
+#X obj 70 328 phasor~;
+#X obj 145 519 tabwrite~ sawtooth;
+#X text 216 252 Une onde est cyclique \, elle repasse toujours par
+les mêmes valeurs. Pour générer un son numérique \, nous avons
+besoin de générer une onde.;
+#X text 215 161 Notre oreille entend un son lorsqu'elle perçoit des
+changements dans le déplacement de l'air. Lorsqu'on pince la corde
+d'une guitare \, ou lorsque le maillet tape les cordes d'un piano \,
+ou lorsque l'on souffle dans un instrument à vent \, celà provoque
+une onde sonore qui se déplace dans l'air jusqu'à notre oreille.
+;
+#X msg 39 230 220;
+#X msg 74 230 440;
+#X text 73 210 La;
+#X text 107 209 La;
+#X msg 111 230 880;
+#X text 9 45 Choisi un des La pour démarrer.;
+#X text 6 165 Les La sur 3 octaves.;
+#X text 6 187 Choisi un des La pour démarrer;
+#X text 132 382 Le résultat est une onde en dent de scie \, ou sawtooth
+en anglais.;
+#X text 133 322 Phasor est le moyen le plus simple. Il génère une
+suite de nombres croissants de 0 à 1 puis revient à zero. La fréquence
+passée détermine la période (frequence = 1 / periode) et donc le
+nombre de valeurs de 0 et 1;
+#X connect 11 0 15 0;
+#X connect 12 0 11 0;
+#X connect 14 0 15 0;
+#X connect 14 0 8 0;
+#X connect 14 0 8 1;
+#X connect 18 0 14 0;
+#X connect 19 0 14 0;
+#X connect 22 0 14 0;
+#X coords 0 752 1 751 85 60 0;

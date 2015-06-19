@@ -1,0 +1,97 @@
+#N canvas 362 53 1013 752 10;
+#X obj -7 3 cnv 15 500 130 empty empty empty 20 12 0 16 -261015 -99865
+0;
+#X text 9 108 Pour arrêter le son \, désactive DSP;
+#X text 9 12 Pour jouer le patch \, active DSP dans la fenêtre principale
+de Pure Data;
+#X text 7 79 Active le graphe;
+#X obj 66 152 cnv 15 430 90 empty empty empty 20 12 0 14 -261873 -66577
+0;
+#X obj 88 513 cnv 15 120 70 empty empty empty 20 12 0 14 -237566 -66577
+0;
+#X obj 117 522 dac~;
+#X obj 419 511 cnv 15 330 190 empty empty empty 20 12 0 14 -261819
+-66577 0;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array addition 300 float 0;
+#X coords 0 1 299 -1 300 70 1 0 0;
+#X restore 434 618 graph;
+#X obj 446 546 metro 150;
+#X obj 445 520 tgl 15 1 empty empty empty 17 7 0 10 -261234 -1 -1 1
+1;
+#X text 10 54 Edite le message et change les notes si tu le souhaite.
+;
+#X text 507 160 L'effet est plus intéressant si les deux notes sont
+des multiples de la même valeur. Cela produit des harmoniques.;
+#X obj 68 271 cnv 15 700 210 empty empty empty 20 12 0 14 -249849 -66577
+0;
+#X obj 104 283 osc~;
+#X obj 318 282 osc~;
+#X obj 221 512 cnv 15 160 180 empty empty empty 20 12 0 14 -228928
+-66577 0;
+#X obj 238 520 pvu~;
+#X obj 239 562 vu 15 120 empty empty -1 -8 0 10 -66577 -1 1 0;
+#X obj 233 450 +~;
+#X obj 151 383 *~ 0.5;
+#X obj 318 383 *~ 0.5;
+#X text 373 381 Chaque oscillateur génère des valeurs entre -1 et
+1;
+#X text 372 402 On divise chaque flux par 2 pour que le total reste
+entre -1 et 1;
+#X text 275 519 Volume Sonore;
+#X text 275 534 en décibels (dB);
+#X text 112 542 Sortie vers;
+#X text 92 557 les haut-parleurs;
+#X text 541 600 Valeurs reçues entre -1 et 1;
+#X obj 445 575 tabwrite~ addition;
+#X obj 96 213 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X msg 116 163 330;
+#X msg 410 161 440;
+#X obj 407 211 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X msg 82 163 220;
+#X msg 375 161 330;
+#X msg 446 162 660;
+#X msg 339 160 221;
+#X text 507 199 Un autre effet intéressant est d'utiliser deux valeurs
+proches.;
+#X msg 170 328 0;
+#X msg 357 325 0;
+#X msg 207 328 0.5;
+#X msg 394 325 0.5;
+#X text 165 206 Tu peux aussi taper directement;
+#X text 159 220 les fréquences dans la boîte number;
+#X text 171 171 fréquence de chaque côté.;
+#X text 179 160 Clique sur un message;
+#X text 209 310 on;
+#X text 169 310 off;
+#X text 396 307 on;
+#X text 355 308 off;
+#X text 279 452 Additionne les deux fréquences.;
+#X text 380 289 Utilise 0 pour une arrêter un flux et 0.5 pour le
+réactiver.;
+#X connect 9 0 29 0;
+#X connect 10 0 9 0;
+#X connect 14 0 20 0;
+#X connect 15 0 21 0;
+#X connect 17 0 18 0;
+#X connect 19 0 17 0;
+#X connect 19 0 6 0;
+#X connect 19 0 6 1;
+#X connect 19 0 29 0;
+#X connect 20 0 19 0;
+#X connect 21 0 19 0;
+#X connect 30 0 14 0;
+#X connect 31 0 30 0;
+#X connect 32 0 33 0;
+#X connect 33 0 15 0;
+#X connect 34 0 30 0;
+#X connect 35 0 33 0;
+#X connect 36 0 33 0;
+#X connect 37 0 33 0;
+#X connect 39 0 20 1;
+#X connect 40 0 21 1;
+#X connect 41 0 20 1;
+#X connect 42 0 21 1;
+#X coords 0 752 1 751 85 60 0;
