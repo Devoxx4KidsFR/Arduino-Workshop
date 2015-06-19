@@ -1,0 +1,56 @@
+#N canvas 168 22 1040 752 10;
+#X obj 33 -161 cnv 15 500 130 empty empty empty 20 12 0 16 -261015
+-99865 0;
+#X text 49 -56 Pour arrêter le son \, désactive DSP;
+#X text 49 -152 Pour jouer le patch \, active DSP dans la fenêtre
+principale de Pure Data;
+#X text 47 -85 Active le graphe;
+#X text 48 -113 Utilise le curseur pour changer la note.;
+#X obj 55 363 cnv 15 120 70 empty empty empty 20 12 0 14 -237566 -66577
+0;
+#X obj 84 372 dac~;
+#X obj 197 362 cnv 15 330 190 empty empty empty 20 12 0 14 -261819
+-66577 0;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array midi 300 float 0;
+#X coords 0 1 299 -1 300 70 1 0 0;
+#X restore 212 469 graph;
+#X obj 224 397 metro 150;
+#X obj 223 371 tgl 15 1 empty empty empty 17 7 0 10 -261234 -1 -1 1
+1;
+#X text 79 392 Sortie vers;
+#X text 59 407 les haut-parleurs;
+#X text 319 451 Valeurs reçues entre -1 et 1;
+#X obj 72 159 cnv 15 430 75 empty empty empty 20 12 0 14 -261873 -66577
+0;
+#X obj 133 169 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 5500 1;
+#X floatatom 89 207 5 0 0 0 - - -;
+#X text 77 30 Les sons MIDI sont représentés par 3 nombres en 0 et
+127 ;
+#X text 76 -19 MIDI est une norme de représentation des sons qui permet
+d'échanger avec des instruments de musique ou des apareils de restitution
+du son.;
+#X text 76 53 Le premier est la hauteur du son. On a vu sur les fréqunces
+que la progression n'est pas linéaire. Il y a plus d'espace entre
+deux notes successives dans les aigus que dans les graves.;
+#X text 74 116 MIDI est linéaire \, ce qui permet de faire plus facilement
+des outils de contrôle.;
+#X text 277 168 Choisi une note entre 0 et 127;
+#X obj 111 260 cnv 15 450 70 empty empty empty 20 12 0 14 -249849 -66577
+0;
+#X obj 130 272 mtof~;
+#X text 187 274 [mtof] converti les notes MIDI (de 0 à 127) en fréquence.
+;
+#X obj 130 307 osc~;
+#X text 200 301;
+#X text 187 295 [ftom] fait le contrâire;
+#X obj 223 426 tabwrite~ midi;
+#X connect 9 0 28 0;
+#X connect 10 0 9 0;
+#X connect 15 0 16 0;
+#X connect 15 0 23 0;
+#X connect 23 0 25 0;
+#X connect 25 0 6 0;
+#X connect 25 0 6 1;
+#X connect 25 0 28 0;
